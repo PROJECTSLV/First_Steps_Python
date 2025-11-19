@@ -1,6 +1,7 @@
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
-from kivy.properties import NumericProperty, StringProperty
+from kivy.properties import NumericProperty
+
 
 class ScoreDisplay(Label):
     score = NumericProperty(0)
@@ -12,8 +13,9 @@ class ScoreDisplay(Label):
         self.color = (1, 1, 1, 1)
         self.bold = True
     
-    def on_score(self, instance, value):
+    def on_score(self):
         self.text = f"Score: {self.score}"
+
 
 class GameOverDisplay(BoxLayout):
     final_score = NumericProperty(0)
